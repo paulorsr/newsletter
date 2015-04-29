@@ -1,0 +1,41 @@
+<h2>Hello {{user.name}}!</h2>
+<table>
+	<tbody>
+		<h3>Newsletters</h3>
+		<button ng-click="editNewsletter(newsletter.id)"><strong>New</strong></button><p></p>
+		<tr ng-repeat="newsletter in newsletters | orderBy : 'name'">
+			<td>{{newsletter.name}}</td>
+			<td>
+				<button ng-click="editNewsletter(newsletter.id)"><strong>edit</strong></button>
+				<button ng-click="deleteNewsletter(newsletter.id)"><strong>del</strong></button>    
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table>
+	<tbody>
+		<h3>Mailing Lists</h3>
+		<button ng-click="editNewsletter(newsletter.id)"><strong>New</strong></button><p></p>
+		<tr ng-repeat="mailinglist in mailinglists">
+			<td>{{mailinglist.name}}</td>
+			<td>
+				<button ng-click="edit($index)"><strong>edit</strong></button>
+				<button ng-click="delete($index)"><strong>del</strong></button>    
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
