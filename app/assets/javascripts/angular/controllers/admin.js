@@ -1,37 +1,39 @@
 newsletter.controller('adminController', function ($scope, $rootScope, $http, $location) {
 
-  // Get newsletters
-  $http.get('api/newsletters.json').
+  // Obter da api as newsletters
+  $http.get('api/newsletters').
+  // Callback para ligaçao bem sucedida
   success(function(data, status, headers, config) {
-  	$scope.newsletters = data.newsletters;
+  	$scope.newsletters = data;
   }).
+  // Callback para ligaçao mal sucedida
   error(function(data, status, headers, config) { 
-  	alert("Error getting newsletters.");
+  	alert("Erro ao obter as newsletters.");
   });
-   // Get mailing lists
-   $http.get('api/mailinglists.json').
+   // Obter da api as mailing lists
+   $http.get('api/mailinglists').
    success(function(data, status, headers, config) {
    	$scope.mailinglists = data.mailinglists;
    }).
    error(function(data, status, headers, config) { 
-   	alert("Error getting newsletters.");
+   	alert("Error ao obter as mailinglists.");
    });
-   // Listener for new newsletter
+   // Listener para uma nova newsletter
    $scope.newNewsletter = function() {
    	$scope.newsletter = {};
    	$location.path("/newsletter");
    }
-   // Listener for saving new newsletter
+   // Listener para guardar newsletter
    $scope.saveNewsletter = function() {
-   	$http.put('api/newsletter/get/' + id + '.json').
+   	$http.put('api/newsletter/create').
    	success(function(data, status, headers, config) {
    		$scope.newsletters = data.newsletters;
    	}).
    	error(function(data, status, headers, config) { 
-   		alert("Error creating newsletter");
+   		alert("Erro ao guardar newsletter");
    	});
    }
-   // Listener for edit newsletter
+   // Listener para editar newsletter
    $scope.editNewsletter = function(id) {
    	$http.get('api/' + id + '.json').
    	success(function(data, status, headers, config) {
@@ -39,7 +41,7 @@ newsletter.controller('adminController', function ($scope, $rootScope, $http, $l
    		$location.path("/newsletter");
    	}).
    	error(function(data, status, headers, config) { 
-   		alert("Error getting newsletter with id " + id);
+   		alert("Error ao editar newsletter com id " + id);
    	});
    }
    // Listener for delete newsletter
