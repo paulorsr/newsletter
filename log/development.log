@@ -42552,3 +42552,371 @@ Processing by MailinglistsController#show as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
   [1m[36mMailinglist Load (0.1ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
 Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-02 22:32:20 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.1ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/newsletters.css?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular-route.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular-cookies.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular/app/app.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular/controllers/admin.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular/controllers/login.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/newsletters.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/assets/angular/views/admin.html" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:32:21 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.1ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/angular/views/login.html" for 127.0.0.1 at 2015-05-02 22:32:23 +0100
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:24 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:25 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:26 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:28 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:28 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:28 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "auth"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = '' AND password = '') ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:39 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"a", "password"=>"[FILTERED]", "auth"=>{"username"=>"a", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'a' AND password = 'a') ORDER BY "users"."id" ASC LIMIT 1
+  Rendered text template (0.0ms)
+Completed 403 Forbidden in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2015-05-02 22:32:48 +0100
+Processing by AuthController#login as JSON
+  Parameters: {"username"=>"paulo", "password"=>"[FILTERED]", "auth"=>{"username"=>"paulo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'paulo' AND password = 'paulo') ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:32:48 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.2ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:32:48 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/angular/views/newsletter.html" for 127.0.0.1 at 2015-05-02 22:33:04 +0100
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:04 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.2ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:04 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.1ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/newsletters/new?token=123" for 127.0.0.1 at 2015-05-02 22:33:12 +0100
+Processing by NewslettersController#new as JSON
+  Parameters: {"name"=>"Desporto", "content"=>"asdads", "token"=>"123", "newsletter"=>{"name"=>"Desporto", "content"=>"asdads"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newsletters" ("content", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["content", "asdads"], ["created_at", Sat, 02 May 2015 21:33:12 UTC +00:00], ["name", "Desporto"], ["updated_at", Sat, 02 May 2015 21:33:12 UTC +00:00]]
+  [1m[36m (131.9ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 142ms (Views: 0.8ms | ActiveRecord: 133.5ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:12 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.2ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:12 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/newsletters/edit?id=10&token=123" for 127.0.0.1 at 2015-05-02 22:33:23 +0100
+Processing by NewslettersController#edit as HTML
+  Parameters: {"id"=>"10", "token"=>"123"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.1ms)[0m  [1mSELECT "newsletters".* FROM "newsletters" WHERE "newsletters"."id" = 10 ORDER BY "newsletters"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:23 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.3ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:23 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:23 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.4ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:23 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.4ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:25 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.2ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:25 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.4ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:26 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:26 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.1ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:26 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:26 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.3ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/newsletters/new?token=123" for 127.0.0.1 at 2015-05-02 22:33:28 +0100
+Processing by NewslettersController#new as JSON
+  Parameters: {"token"=>"123", "newsletter"=>{}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newsletters" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Sat, 02 May 2015 21:33:28 UTC +00:00], ["updated_at", Sat, 02 May 2015 21:33:28 UTC +00:00]]
+  [1m[36m (166.7ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 171ms (Views: 0.4ms | ActiveRecord: 167.5ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:28 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.1ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:28 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/newsletters/delete?id=11&token=123" for 127.0.0.1 at 2015-05-02 22:33:33 +0100
+Processing by NewslettersController#delete as HTML
+  Parameters: {"id"=>"11", "token"=>"123"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.1ms)[0m  [1mSELECT "newsletters".* FROM "newsletters" WHERE "newsletters"."id" = 11 ORDER BY "newsletters"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "newsletters" WHERE "newsletters"."id" = ?[0m  [["id", 11]]
+  [1m[35m (115.2ms)[0m  commit transaction
+  [1m[36mNewsletter Load (0.4ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 121ms (Views: 1.8ms | ActiveRecord: 116.1ms)
+
+
+Started GET "/api/mailinglists/edit?id=4&token=123" for 127.0.0.1 at 2015-05-02 22:33:37 +0100
+Processing by MailinglistsController#edit as HTML
+  Parameters: {"id"=>"4", "token"=>"123"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists" WHERE "mailinglists"."id" = 4 ORDER BY "mailinglists"."id" ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/angular/views/mailinglist.html" for 127.0.0.1 at 2015-05-02 22:33:37 +0100
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:37 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.2ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:37 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.1ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/mailinglists/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:38 +0100
+Processing by MailinglistsController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/newsletters/show?token=123" for 127.0.0.1 at 2015-05-02 22:33:38 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"token"=>"123"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.7ms)
