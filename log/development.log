@@ -42920,3 +42920,27 @@ Processing by NewslettersController#show as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
   [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
 Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/newsletters/delete?id=10&token=123" for 127.0.0.1 at 2015-05-02 22:34:50 +0100
+Processing by NewslettersController#delete as HTML
+  Parameters: {"id"=>"10", "token"=>"123"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mNewsletter Load (0.1ms)[0m  [1mSELECT "newsletters".* FROM "newsletters" WHERE "newsletters"."id" = 10 ORDER BY "newsletters"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "newsletters" WHERE "newsletters"."id" = ?[0m  [["id", 10]]
+  [1m[35m (146.2ms)[0m  commit transaction
+  [1m[36mNewsletter Load (0.3ms)[0m  [1mSELECT "newsletters".* FROM "newsletters"[0m
+Completed 200 OK in 151ms (Views: 0.7ms | ActiveRecord: 147.1ms)
+
+
+Started GET "/api/mailinglists/delete?id=4&token=123" for 127.0.0.1 at 2015-05-02 22:34:51 +0100
+Processing by MailinglistsController#delete as HTML
+  Parameters: {"id"=>"4", "token"=>"123"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."token" = '123' LIMIT 1
+  [1m[36mMailinglist Load (0.2ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists" WHERE "mailinglists"."id" = 4 ORDER BY "mailinglists"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "mailinglists" WHERE "mailinglists"."id" = ?[0m  [["id", 4]]
+  [1m[35m (115.9ms)[0m  commit transaction
+  [1m[36mMailinglist Load (0.3ms)[0m  [1mSELECT "mailinglists".* FROM "mailinglists"[0m
+Completed 200 OK in 121ms (Views: 0.6ms | ActiveRecord: 117.0ms)
