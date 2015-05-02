@@ -1,4 +1,4 @@
-var newsletter = angular.module('newsletter', ['ngRoute'])
+var newsletter = angular.module('newsletter', ['ngRoute', 'ngCookies'])
 .config(function($routeProvider){
   $routeProvider
   .when('/', {
@@ -13,6 +13,10 @@ var newsletter = angular.module('newsletter', ['ngRoute'])
     controller: 'adminController',
     templateUrl: 'assets/angular/views/newsletter.html'
   })
+  .when('/mailinglist', {
+    controller: 'adminController',
+    templateUrl: 'assets/angular/views/mailinglist.html'
+  })
   .when('/logout', {
     controller: 'loginController',
     templateUrl: 'assets/angular/views/login.html'
@@ -21,10 +25,10 @@ var newsletter = angular.module('newsletter', ['ngRoute'])
     redirectTo: '/'
   });
 })
-.run(function($rootScope, $location) {
+/*.run(function($rootScope, $location) {
   $rootScope.$on('$routeChangeStart', function(next, current) { 
     if(!$rootScope.user) {
       $location.path("/");
     }
   });
-})
+})*/

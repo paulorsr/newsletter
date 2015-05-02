@@ -1,11 +1,12 @@
 Api::Application.routes.draw do
   scope "/api" do
-    scope "/newsletters" do
-      get "/" => "newsletters#show", :constraints => {:ip => /127.0.0.1/} # restringe o acesso à API para endereços locais
-    end
+      match ":controller/:action", via: [:get, :post]
+      post "/login" => "auth#login"
+      #get "/" => "newsletters#show", :constraints => {:ip => /127.0.0.1/} # restringe o acesso à API para aceitar da plataforma cliente
   end
   root "home#index" # redirecciona a raiz para a vista home
   get '*path' => redirect('/') # redirecciona todos os outros caminhos para a raiz
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

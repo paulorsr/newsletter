@@ -1,0 +1,8 @@
+<label>Name:<br>
+    <input type="text" ng-model="mailinglist.name"><br
+ </label>
+ <label>Email addresses seperated by ';':<br>
+    <textarea id="text" cols="40" rows="5" my-maxlength="5" ng-model="mailinglist.addresses"></textarea>
+ </label><br>
+ <button ng-click="cancel()"><strong>cancel</strong></button>
+<button ng-click="saveMailinglist(mailinglist.id)"><strong>save</strong></button>
