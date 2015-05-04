@@ -21,7 +21,7 @@ class MailinglistsController < ApplicationController
 		render nothing: true
 	end
 
-	def edit
+	def get
 		render json: Mailinglist.where(id: params[:id]).first
 	end
 

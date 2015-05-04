@@ -8,6 +8,10 @@ class NewslettersController < ApplicationController
 		render json: Newsletter.all
 	end
 
+	def get
+		render json: Newsletter.where(id: params[:id]).first
+	end
+
 	def save
 		data = JSON.parse(request.body.read)
 		newsletter = Newsletter.where(id: params[:id]).first
@@ -19,10 +23,6 @@ class NewslettersController < ApplicationController
 		end
 		newsletter.save
 		render nothing: true
-	end
-
-	def edit
-		render json: Newsletter.where(id: params[:id]).first
 	end
 
 	def delete
