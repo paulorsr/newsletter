@@ -47,7 +47,7 @@ error(function(data, status, headers, config) {
   }
  	$http({
   method: "POST",
-  url: "api/newsletters/new?token=" + $cookieStore.get('token'),
+  url: "api/newsletters/save?token=" + $cookieStore.get('token'),
   data: $rootScope.newsletter,
   headers: {
     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ error(function(data, status, headers, config) {
   }
   $http({
   method: "POST",
-  url: "api/mailinglists/new?token=" + $cookieStore.get('token'),
+  url: "api/mailinglists/save?token=" + $cookieStore.get('token'),
   data: $rootScope.mailinglist,
   headers: {
     "Content-Type": "application/json",

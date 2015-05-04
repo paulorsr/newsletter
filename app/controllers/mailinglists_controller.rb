@@ -8,9 +8,15 @@ class MailinglistsController < ApplicationController
 		render json: Mailinglist.all
 	end
 
-	def new
+	def save
 		data = JSON.parse(request.body.read)
-		mailinglist = Mailinglist.new(:name => data['name'], :addresses => data['addresses'])
+		mailinglist = Mailinglist.where(id: params[:id]).first
+		if mailinglist.present?
+			mailinglist.name = data['name']
+			mailinglist.addresses = data['addresses']
+		else
+			mailinglist = Mailinglist.new(:name => data['name'], :addresses => data['addresses'])
+		end
 		mailinglist.save
 		render nothing: true
 	end
