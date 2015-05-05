@@ -2,8 +2,8 @@
 <button ng-click="logout()"><strong>Logout</strong></button><p></p>
 <table>
 	<tbody>
-		<h3>Newsletters</h3>
-		<button ng-click="newNewsletter(newsletter.id)"><strong>New</strong></button><p></p>
+		<tr><th>Newsletters</th>
+		<th><button ng-click="newNewsletter(newsletter.id)"><strong>New</strong></button></th></tr>
 		<tr ng-repeat="newsletter in newsletters | orderBy : 'name'">
 			<td>{{newsletter.name}}</td>
 			<td>
@@ -16,8 +16,8 @@
 </table>
 <table>
 	<tbody>
-		<h3>Mailing Lists</h3>
-		<button ng-click="newMailinglist(mailinglist.id)"><strong>New</strong></button><p></p>
+		<tr><th>Mailing Lists</th>
+		<th><button ng-click="newMailinglist(mailinglist.id)"><strong>New</strong></button></th></tr>
 		<tr ng-repeat="mailinglist in mailinglists | orderBy : 'name'">
 			<td><input type="checkbox" ng-click="checkMailinglists($event,mailinglist.id)"></td>
 			<td>{{mailinglist.name}}</td>
@@ -30,7 +30,14 @@
 </table>
 
 <style>
-table, th , td {
+table {
+	vertical-align: top;
+	display: inline-block;
+}
+body {
+	
+}
+th , td {
   border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
