@@ -47,7 +47,7 @@ error(function(data, status, headers, config) {
   }
  	$http({
   method: "POST",
-  url: "api/newsletters/new?token=" + $cookieStore.get('token'),
+  url: "api/newsletters/save?token=" + $cookieStore.get('token'),
   data: $rootScope.newsletter,
   headers: {
     "Content-Type": "application/json",
@@ -63,7 +63,7 @@ error(function(data, status, headers, config) {
  }
  // Listener para editar newsletter
  $scope.editNewsletter = function(id) {
- 	$http.get('api/newsletters/edit?id=' + id + "&token=" + $cookieStore.get('token')).
+ 	$http.get('api/newsletters/get?id=' + id + "&token=" + $cookieStore.get('token')).
  	success(function(data, status, headers, config) {
  		$rootScope.newsletter = data;
  		$location.path("newsletter");
@@ -95,7 +95,7 @@ error(function(data, status, headers, config) {
   }
   $http({
   method: "POST",
-  url: "api/mailinglists/new?token=" + $cookieStore.get('token'),
+  url: "api/mailinglists/save?token=" + $cookieStore.get('token'),
   data: $rootScope.mailinglist,
   headers: {
     "Content-Type": "application/json",
@@ -108,7 +108,7 @@ error(function(data, status, headers, config) {
  }
  // Listener para editar mailinglist
  $scope.editMailinglist = function(id) {
-  $http.get('api/mailinglists/edit?id=' + id + "&token=" + $cookieStore.get('token')).
+  $http.get('api/mailinglists/get?id=' + id + "&token=" + $cookieStore.get('token')).
   success(function(data, status, headers, config) {
     $rootScope.mailinglist = data;
     $location.path("mailinglist");
@@ -122,6 +122,7 @@ error(function(data, status, headers, config) {
   });
  }
 
+// Verifica as alteraçoes às checkboxs das mailing lists
 var checkedMailinglists = [];
 $scope.checkMailinglists = function($event, id) {
   var present = false;
@@ -142,7 +143,7 @@ $scope.checkMailinglists = function($event, id) {
   var selectedMailinglists =  [];
   for(i = 0; i < checkedMailinglists.length; i++) {
     if (checkedMailinglists[i].value) {
-      selectedMailinglists.push(checkedMailinglists[i]);
+      selectedMailinglists.push(checkedMailinglists[i].id);
     }
   }
   
@@ -151,8 +152,24 @@ $scope.checkMailinglists = function($event, id) {
     return;
   }
 
-  // envia o email
-
+  // Cria o object a enviar por post
+  var email = {
+    "newsletter": id,
+    "mailinglists": selectedMailinglists
+  }
+  
+  // Envia o email
+  $http({
+  method: "POST",
+  url: "api/emails/post?token=" + $cookieStore.get('token'),
+  data: email,
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  }}).
+  success(function(data, status, headers, config) {
+    console.log("Newsletter sent.");
+  });
  }
  
  // Listener para cancelar a presente acçao

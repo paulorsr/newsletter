@@ -8,15 +8,21 @@ class NewslettersController < ApplicationController
 		render json: Newsletter.all
 	end
 
-	def new
-		data = JSON.parse(request.body.read)
-		newsletter = Newsletter.new(:name => data['name'], :content => data['content'])
-		newsletter.save
-		render nothing: true
+	def get
+		render json: Newsletter.where(id: params[:id]).first
 	end
 
-	def edit
-		render json: Newsletter.where(id: params[:id]).first
+	def save
+		data = JSON.parse(request.body.read)
+		newsletter = Newsletter.where(id: params[:id]).first
+		if newsletter.present?
+			newsletter.name = data['name']
+			newsletter.content = data['content']
+		else
+			newsletter = Newsletter.new(:name => data['name'], :content => data['content'])
+		end
+		newsletter.save
+		render nothing: true
 	end
 
 	def delete
